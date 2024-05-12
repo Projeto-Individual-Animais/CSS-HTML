@@ -1,53 +1,50 @@
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap');
 
 
 body {
     margin: 0;
-    background-image: url("https://static.vecteezy.com/ti/fotos-gratis/p1/24620286-vibrante-cores-do-tropical-peixe-dentro-uma-caribe-recife-paraiso-gerado-de-ai-gratis-foto.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    font-family: "PT Serif", serif;;
+    font-family: "PT Serif", serif;
+    width: 100%;
 }
 
 .header {
+    display: flex;
     width: 100%;
     height: 90%;
-    display: flex;
     font-family: sans-serif;
     position: sticky;
     align-items: center;
     z-index: 2;
-    justify-content: flex-end;
-    border: solid white;
-    
+    margin-top: 3vh;
+    background-color: black;
+
+
 }
 
 .navbar {
     display: flex;
     margin-left: 400px;
-    border: solid red;
+    flex-direction: row;
+
 }
 
 .navbar a {
     position: relative;
     font-size: 1.2vw;
     color: white;
-    font-weight: 500;
     text-decoration: none;
-    margin-left: 40px;
+    margin-left: 6vw;
 }
 
 .button_login {
-    height: 50px;
-    width: 200px;
+    height: 5vh;
+    width: 15vh;
     position: relative;
     background-color: transparent;
     border: 2px solid white;
     color: white;
-    border-radius: 30px;
-    margin-left: auto;
+    border-radius: 90vh;
+    margin-left: 15vh;
 }
 
 .btn_text {
@@ -63,13 +60,12 @@ body {
     flex-direction: column;
     width: 100%;
     height: 50%;
-    margin-top: 10px;
- 
-}
+    background-image: url("https://static.vecteezy.com/ti/fotos-gratis/p1/24620286-vibrante-cores-do-tropical-peixe-dentro-uma-caribe-recife-paraiso-gerado-de-ai-gratis-foto.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
 
-.container{
-    display: flex;
-    justify-content: flex-end;
+
 }
 
 .home h1 {
@@ -78,31 +74,77 @@ body {
     flex-direction: row;
     justify-content: center;
     text-align: center;
-    font-size: 100px;
+    font-size: 14vh;
     font-family: "Secular One", sans-serif;
+    margin-top: 10vh;
 
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
 }
 
 .conteudo {
     display: flex;
-    color: #D8C4B5;
     flex-direction: column;
-    text-align: left;
-  border-radius: 70px;
-    background-color: rgba(216, 196, 181, 0.5);
-    width: 30%;
-    margin-right: 45px;
+    color: #D8C4B5;
+    background-color: rgba(61, 63, 66, 0.568);
+    width: 50%;
+    margin-top: 1vh;
 }
 
 .conteudo h1 {
-    font-size: 45px;
+    display: flex;
+    font-size: 6vh;
     font-weight: bold;
-    
+    margin-left: 4vh;
 
 }
 
 .conteudo h2 {
-    font-size: 35px;
+    display: flex;
+    font-size: 4vh;
+    font-weight: bold;
 
 
+}
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    background-color: #473121;
+    border-top: 100vh; 
+    border-color: black;
+
+}
+
+.sobre h1 {
+    display: flex;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+    font-size: 7vh;
+    font-family: "Secular One", sans-serif;
+    margin-top: 10vh;
+
+}
+.containerSobre{
+    background-color: transparent;
+    width: 50%;
+    justify-items: center;
+
+    
+}
+
+.conteudoSobre h2 {
+    display: flex;
+    font-size: 4vh;
+    text-align: start;
+    color: black;
+    font-family: sans-serif;
 }
