@@ -23,7 +23,7 @@ body {
 
 .navbar {
     display: flex;
-    margin-left: 400px;
+    margin-left: 115vh;
     flex-direction: row;
 
 }
@@ -116,10 +116,12 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 50%;
     background-color: #473121;
-    border-top: 100vh; 
-    border-color: black;
+    border-top: 1vh solid black;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/S._flavius_SP_Zoo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
 
 }
 
@@ -133,12 +135,16 @@ body {
     margin-top: 10vh;
 
 }
-.containerSobre{
+
+.containerSobre {
     background-color: transparent;
     width: 50%;
     justify-items: center;
+    width: 100%;
+    flex-direction: column;
 
-    
+
+
 }
 
 .conteudoSobre h2 {
@@ -147,4 +153,90 @@ body {
     text-align: start;
     color: black;
     font-family: sans-serif;
+    width: 50%;
+
+}
+
+.imagemSobre {
+    display: flex;
+    
+    width: 50%;
+    height: 300px;
+    justify-content: left;
+}
+
+.containerCuriosidades {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    flex-direction: column;
+    border-top: 1vh solid black;
+
+
+}
+
+.conteudoCuriosidades {
+    display: flex;
+    font-size: 4vh;
+    text-align: end;
+    color: black;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.containerCuriosidades h1 {
+    display: flex;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+    font-size: 7vh;
+    font-weight: bold;
+    margin-top: 10vh;
+    flex-direction: column;
+    margin-left: 5vh;
+    color:aliceblue;
+
+}
+
+.conteudoCuriosidadesInicio{
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    flex-direction: column;
+
+   
+}
+.conteudoCuriosidadesInicio h2 {
+display: flex;
+font-size: 5vh;
+text-align: start;
+color: black;
+width: 50%;
+margin-left: 5vh;
+color: #D8C4B5;
+}
+.conteudoCuriosidadesMeio h2{
+display: flex;
+font-size: 5vh;
+text-align: start;
+color: black;
+width: 50%;
+margin-left: 15vh;
+color: #D8C4B5;
+
+
+
+}
+.conteudoCuriosidadesFinal h2{
+display: flex;
+font-size: 5vh;
+text-align: start;
+color: black;
+width: 50%;
+margin-left: 25vh;
+color: #D8C4B5;
+
+
 }
