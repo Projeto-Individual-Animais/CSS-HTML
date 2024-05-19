@@ -16,7 +16,6 @@ body {
     align-items: center;
     z-index: 2;
     margin-top: 3vh;
-    background-color: black;
 
 
 }
@@ -64,6 +63,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     box-sizing: border-box;
+    border: 0.5vh solid black;
+
 
 
 }
@@ -93,7 +94,8 @@ body {
     color: #D8C4B5;
     background-color: rgba(61, 63, 66, 0.568);
     width: 50%;
-    margin-top: 1vh;
+    margin-bottom: 2vh;
+    margin-right: 3vh;
 }
 
 .conteudo h1 {
@@ -116,12 +118,13 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: #473121;
-    border-top: 1vh solid black;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/S._flavius_SP_Zoo.jpg");
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
     box-sizing: border-box;
+    border: 0.5vh solid black;
+
+
 
 }
 
@@ -132,48 +135,68 @@ body {
     justify-content: center;
     font-size: 7vh;
     font-family: "Secular One", sans-serif;
-    margin-top: 10vh;
 
 }
 
 .containerSobre {
-    background-color: transparent;
-    width: 50%;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+
+}
+
+.design {
+    display: flex;
+    width: 100%;
+    border: 0.5vh solid black;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.conteudoSobre {
+    display: flex;
+    width: 80%;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.curiosidades {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    background-color: yellow;
     flex-direction: column;
-
-
-
+    border: 0.5vh solid black;
+}
+.designCuriosidades{
+    display: flex;
+    width: 100%;
 }
 
 .conteudoSobre h2 {
     display: flex;
     font-size: 4vh;
-    text-align: start;
     color: black;
     font-family: sans-serif;
-    width: 50%;
+    text-align: center;
 
 }
 
-.imagemSobre {
+
+
+.curiosidades h1 {
     display: flex;
-    
-    width: 50%;
-    height: 300px;
-    justify-content: left;
+    font-weight: bold;
+    color: black;
+    justify-content: start;
+    margin-left: 5vh;
+    font-size: 7vh;
+    font-family: "Secular One", sans-serif;
+    margin-top: 10vh;
 }
 
-.containerCuriosidades {
-    display: flex;
-    width: 100%;
-    background-color: black;
-    flex-direction: column;
-    border-top: 1vh solid black;
-
-
-}
 
 .conteudoCuriosidades {
     display: flex;
@@ -196,47 +219,50 @@ body {
     margin-top: 10vh;
     flex-direction: column;
     margin-left: 5vh;
-    color:aliceblue;
+    color: black;
 
 }
 
-.conteudoCuriosidadesInicio{
+.conteudoCuriosidadesInicio {
     display: flex;
     width: 100%;
     background-color: transparent;
     flex-direction: column;
 
-   
+
 }
+
 .conteudoCuriosidadesInicio h2 {
-display: flex;
-font-size: 5vh;
-text-align: start;
-color: black;
-width: 50%;
-margin-left: 5vh;
-color: #D8C4B5;
+    display: flex;
+    font-size: 5vh;
+    text-align: start;
+    color: black;
+    width: 50%;
+    margin-left: 5vh;
+    color: black;
 }
-.conteudoCuriosidadesMeio h2{
-display: flex;
-font-size: 5vh;
-text-align: start;
-color: black;
-width: 50%;
-margin-left: 15vh;
-color: #D8C4B5;
+
+.conteudoCuriosidadesMeio h2 {
+    display: flex;
+    font-size: 5vh;
+    text-align: start;
+    color: black;
+    width: 50%;
+    margin-left: 15vh;
+    color: black;
 
 
 
 }
-.conteudoCuriosidadesFinal h2{
-display: flex;
-font-size: 5vh;
-text-align: start;
-color: black;
-width: 50%;
-margin-left: 25vh;
-color: #D8C4B5;
+
+.conteudoCuriosidadesFinal h2 {
+    display: flex;
+    font-size: 5vh;
+    text-align: start;
+    color: black;
+    width: 50%;
+    margin-left: 25vh;
+    color: black;
 
 
 }
