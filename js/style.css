@@ -20,10 +20,15 @@ body {
 
 }
 
+* a{
+    text-decoration: none;
+}
+
 .navbar {
     display: flex;
     margin-left: 115vh;
     flex-direction: row;
+    justify-content: space-between;
 
 }
 
@@ -31,20 +36,24 @@ body {
     position: relative;
     font-size: 1.2vw;
     color: white;
-    text-decoration: none;
     margin-left: 6vw;
 }
 
-.button_login {
-    height: 5vh;
-    width: 15vh;
-    position: relative;
-    background-color: transparent;
+#login{
+    display: flex;
     border: 2px solid white;
+    background-color: transparent;
     color: white;
     border-radius: 90vh;
-    margin-left: 15vh;
-}
+    height: 5vh;
+    width: 15vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10vh;
+    text-align: center;
+
+
+} 
 
 .btn_text {
     color: white;
