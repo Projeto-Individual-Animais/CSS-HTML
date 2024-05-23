@@ -20,13 +20,14 @@ body {
 
 }
 
-* a{
+* a {
     text-decoration: none;
 }
 
 .navbar {
     display: flex;
-    margin-left: 115vh;
+    width: 100%;
+    margin-left: 50vh;
     flex-direction: row;
     justify-content: space-between;
 
@@ -39,21 +40,23 @@ body {
     margin-left: 6vw;
 }
 
-#login{
-    display: flex;
-    border: 2px solid white;
+button {
     background-color: transparent;
-    color: white;
-    border-radius: 90vh;
+    border: 2px solid white;
     height: 5vh;
     width: 15vh;
+    border-radius: 90vh;
+    color: white;
+    font-size: 3vh;
     justify-content: center;
     align-items: center;
-    margin-left: 10vh;
+    margin-right: 3vh;
+    margin-top: -1vh;
     text-align: center;
+    font-family: "PT Serif", serif;
 
 
-} 
+}
 
 .btn_text {
     color: white;
@@ -179,7 +182,8 @@ body {
     flex-direction: column;
     border: 0.5vh solid black;
 }
-.designCuriosidades{
+
+.designCuriosidades {
     display: flex;
     width: 100%;
 }

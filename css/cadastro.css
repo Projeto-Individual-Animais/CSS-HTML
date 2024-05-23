@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap');
+
+
+body {
+
+    display: flex;
+
+    margin: 0;
+
+    font-family: "PT Serif", serif;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif");
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    box-sizing: border-box;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+* a {
+    text-decoration: none;
+}
+
+.bloco {
+    display: flex;
+
+    width: 40vw;
+
+    height: 70vh;
+
+    background-color: aliceblue;
+
+    /* border-radius: 10%;  */
+
+    border: 0.5vh solid #023047;
+
+    flex-direction: column;
+
+    /* justify-content: center; */
+
+    align-items: center;
+}
+
+.bloco h1 {
+    display: flex;
+    font-size: 6vh;
+    text-align: center;
+    /* margin-top: -5vh; */
+    border-bottom: 0.5vh solid #023047;
+    justify-content: start;
+    margin-top: 6vh;
+
+}
+
+.estilo {
+    height: 25%;
+    width: 50%;
+    margin-top: -5vh;
+    margin-right: 15vh;
+}
+
+.bloco h2 {
+
+    display: flex;
+    text-align: start;
+    font-size: 2vh;
+    /* margin-left: 37vh; */
+
+}
+
+.estilo_nome {
+    height: 25%;
+    width: 50%;
+    margin-right: 15vh;
+}
+
+.estilo_inputs {
+    height: 25%;
+    width: 50%;
+    margin-right: 15vh;
+}
+
+button {
+    display: block;
+    font-size: 3vh;
+    /* border-radius: 3vh; */
+    background-color: #023047;
+    color: azure;
+    /* margin-right: 47vh; */
+    margin-top: 25vh;
+    width:58vh
+
+}
+.estilo_inputs input{
+width: 45vh;
+}

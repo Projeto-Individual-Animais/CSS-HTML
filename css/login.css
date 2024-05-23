@@ -110,3 +110,8 @@ text-align: center;
     /* margin-top: vh; */
 
 }
+.estilo_cadastro a{
+    display:flex;
+    margin-top: -4vh;
+    justify-content: center;
+}

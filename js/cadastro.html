@@ -4,46 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="cadastro.css">
-
+    <title>Cadastro</title>
+<link rel="stylesheet" href="../css/cadastro.css">
+<script src="script_cadastro.js"></script>
 </head>
 
 <body>
     <div class="bloco">
-        <div class="estilo">
+        <div class="estilo_nome">
             <h1>Cadastro</h1>
         </div>
-
+<div class="estilo_inputs">
         <div class="estilo_nome">
-            <h2>Apelido</h2><br>
+            <h2>Nome de usuário</h2><br>
         </div>
-        <input id="input_nome" placeholder="Como você gosta de ser chamado?">
-        <div class="email">
+        <div class="input">
+        <input id="input_nome" placeholder="Como você gostaria de ser chamado?"></div>
+        <div class="estilo_nome">
             <h2>E-mail</h2>
         </div>
 
-        <input id="input_email" placeholder="Contato">
+        <input id="input_email" placeholder="contato@exemplo.com">
 
-        <div class="senha">
+        <div class="estilo_nome">
             <h2>Senha</h2>
         </div>
 
-        <input type="password" id="input_senha" placeholder="Escolha uma senha segura e fácil de lembrar!">
+        <input type="password" id="input_senha" placeholder="No minimo 6 caracteres normais e 1 especial">
 
-        <div class="confirmar_senha">
+        <div class="estilo_nome">
             <h2>Confirme sua senha</h2>
-            <input type="password" id="input_confirmar_senha" placeholder="Digite sua senha novamente">
-
         </div>
-    </div><br>
 
-    <button onclick="Cadastrar()">Cadastrar</button>
-    <div class="estilo_cadastro">
+            <input type="password" id="input_confirme_senha" placeholder="Digite sua senha novamente">
+
+    
+    </div>
+    <button onclick="cadastrar()">Cadastrar</button></div>
+<div id="mensagem"></div>
 
     </div>
 
-    </div>
 
 </body>
 
