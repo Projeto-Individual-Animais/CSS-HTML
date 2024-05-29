@@ -170,6 +170,7 @@ border-top-left-radius: 10%;
     flex-direction: column;
     background-color: #ffc300;
     border: 0.5vh solid black;
+    
 }
 
 #curiosidades h1 {
@@ -197,13 +198,17 @@ border-top-left-radius: 10%;
     align-items: start;
     margin-left: 5vh;
     font-size: 2vh;
+    flex: 1; /* Ocupa metade do espaço disponível */
+    padding: 20px;
+    }
+.imagem{
+    width: 100%;
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
-.divisoria {
-    display: flex;
-    width: 50%;
-    border-left: 5vh solid black;
-}
 
 .conteudoCuriosidadesInicio, .conteudoCuriosidadesMeio, .conteudoCuriosidadesFinal {
     display: flex;
@@ -211,3 +216,78 @@ border-top-left-radius: 10%;
     background-color: transparent;
     flex-direction: column;
 }
+
+.tituloQuiz{
+}
+/* .reactions {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.reactions h2 {
+    font-size: 2vh;
+}
+
+button {
+    font-size: 16px;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    border-radius: 90%;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+#btn_likeNew {
+    background-color: aqua;
+align-items: center;
+justify-content: space-around;
+
+}
+
+#btn_likeKnown {
+    background-color: aquamarine;
+}
+
+#btn_dislike {
+    background-color: crimson;
+}
+.reacaoAmei{
+    width: 15vh;
+    height: 15vh;
+     border-radius: 2vh;
+     text-align: center;
+    background-color: white;
+}
+.reacaoAmei{
+    width: 15vh;
+    height: 15vh;
+     border-radius: 2vh;
+     text-align: center;
+    background-color: white;
+}
+.reacaoAmei{
+    width: 15vh;
+    height: 15vh;
+     border-radius: 2vh;
+     text-align: center;
+    background-color: white;
+}
+.reacaoLike{
+    width: 15vh;
+    height: 15vh;
+     border-radius: 2vh;
+     text-align: center;
+    background-color: white;
+}
+.reacaoDislike{
+    width: 15vh;
+    height: 15vh;
+     border-radius: 2vh;
+     text-align: center;
+    background-color: white;
+} */

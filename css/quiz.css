@@ -1,75 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
 body {
-    height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 5px;
+    margin: 0;
+    font-family: 'PT Serif', serif;
+    width: 100%;
+    align-items: center;
+    overflow-x: hidden;
     background: linear-gradient(to right, #132B58, #ffc300);
 }
 
 body h2 {
-    color: white;
-    font-size: 9vh;
+    color: black;
+    font-size: 5vh;
+    margin: 20px 0;
 }
 
-main {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%;
-    height: 70%;
-    max-width: 400px;
-    min-width: 100px;
+.contender {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    height: 50vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    justify-content: center;
-}
-.spnQnt{
-    text-align: end;
-}
-
-.answer {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.contender h2 {
+    margin: 0 0 20px;
 }
 
 button {
-    width: 50%;    text-align: center;
-    align-items: center;
-    padding: 5px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: #132B58;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #4B0082;
-    color: white;
+    transition: background-color 0.3s;
 }
 
-.finish {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
+button:hover {
+    background-color: #0f1f45;
 }
-
-.finish button {
-    text-align: center;
-}
+/* linha */

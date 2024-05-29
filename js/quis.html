@@ -1,77 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="../css/quiz.css">
+<!-- <link rel="stylesheet" href="../css/quiz.css"> -->
 </head>
-<body>
-    <h2> Quiz</h2>
-    <main>
-        <div class="content">
-            <span class="spnQnt"></span>
-            <span class="question"></span>
-            <span class="answer"></span>
-            <button onclick="inicar()">Start!</button>
 
-        </div>
-        <div class="finish"></div>
-        <span></span>
-        <button onclick="reiniciar()">Reinicar</button>
-    </main>    
+<body id="body">
+    <h2>Quiz</h2>
+    <div class="contender">
+        <h2>Teste o seu conhecimento!</h2>
+        <button onclick="iniciar()">Iniciar!</button>
+        <div class="mensagem"></div>
+    </div>
 </body>
+
 </html>
 <script>
+    let pontuacao = 0
 
-const questions = [
-    {
-        question: `Quais são as teorias mais aceitas pela comunidade 
-        científica sobre a evolução das características 
-        únicas do Peixe Rosa com Mãos?`,
-        options: [`As "mãos" ajudam o peixe a manipular objetos subaquáticos.`,
-        `As "mãos" são usadas para escalar corais.`,
-        `As "mãos" servem para atrair parceiros durante o acasalamento.`],
-        correctAnswer: `As "mãos" ajudam o peixe a manipular objetos subaquáticos.`
-    },
-    {
-        question: `De que maneira a coloração cor-de-rosa do 
-        Peixe Rosa com Mãos pode influenciar sua interação com outras espécies marinhas?`,
-        options: [`A cor rosa permite que o peixe emita luz própria.`, `A cor rosa ajuda na 
-        camuflagem em ambientes com corais e anêmonas.`, `A cor rosa atrai presas diretamente para o peixe.`],
-        correctAnswer: `A cor rosa ajuda na camuflagem em ambientes com corais e anêmonas.`
-    },
-    {
-        question: `Quais métodos de pesquisa e tecnologias 
-        os cientistas utilizam para estudar o comportamento e o habitat do Peixe Rosa com Mãos?`,
-        options: [`Medição de sons emitidos pelo peixe.`,`Coleta de amostras de DNA diretamente das mãos.`, `Uso de câmeras subaquáticas e drones.`],
-        correctAnswer: `Uso de câmeras subaquáticas e drones.`
-    }
-];
+    function iniciar() {
+        body.innerHTML = `<body id="body">
+<h2>Quiz</h2>
+<div class="contender">
+    <h2>Quais são as teorias mais aceitas pela comunidade científica sobre a evolução das características únicas do Peixe Rosa com Mãos?
+</h2>
+    <select id="select">
+        <option value="optionVazio">Selecione uma alternativa</option>
+        <option value="optionErrado">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+        <option value="optionErrado">As "mãos" são usadas para escalar corais.</option>
+        <option value="optionCorreto">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+    </select>
+    <button onclick="proximaPergunta()">Próxima Pergunta</button>
+    <div class="mensagem"></div>
+</div>
+    </body>`
+        const respostaUsuario = select.value
 
-// Função para exibir o quiz
-function inicar() {
-    let score = 0; // Pontuação inicial
-    const totalQuestions = questions.length; // Total de perguntas
-
-    // Loop para percorrer todas as perguntas
-    for (let contador = 0; contador < totalQuestions; contador++) {
-        const currentQuestion = questions[contador]; // Pergunta atual
-        const userAnswer = prompt(`${currentQuestion.question}\n${currentQuestion.options.join('\n')}`); // Exibir a pergunta e opções para o usuário e receber a resposta
-        
-        // Verificar se a resposta do usuário está correta
-        if (userAnswer === currentQuestion.correctAnswer) {
-            score++; // Aumentar a pontuação se estiver correta
-            console.log("Resposta correta!");
-        } else {
-            console.log("Resposta incorreta!");
+        if (respostaUsuario == "optionVazio") {
+            mensagem.innerHTML += `Selecione uma opção!`;
+            return;
         }
+        else {
+            if (respostaUsuario == "optionCorreto") {
+                pontuacao += 1
+            }
+        }
+
     }
-
-    // Exibir a pontuação final
-    console.log(`Você acertou ${score} de ${totalQuestions} perguntas.`);
-
-
-}
-// Chamando a função para exibir o quiz
+    function proximaPergunta() {
+            body.innerHTML = `teste`
+    
+    }
 </script>
+<!-- linha -->
