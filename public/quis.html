@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-<!-- <link rel="stylesheet" href="../css/quiz.css"> -->
+    <link rel="stylesheet" href="../css/quiz.css">
 </head>
 
 <body id="body">
@@ -18,41 +18,117 @@
 </body>
 
 </html>
+
 <script>
-    let pontuacao = 0
+    let pontuacao = 0;
+    let perguntaAtual = 1;
 
     function iniciar() {
-        body.innerHTML = `<body id="body">
-<h2>Quiz</h2>
-<div class="contender">
-    <h2>Quais são as teorias mais aceitas pela comunidade científica sobre a evolução das características únicas do Peixe Rosa com Mãos?
-</h2>
-    <select id="select">
-        <option value="optionVazio">Selecione uma alternativa</option>
-        <option value="optionErrado">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
-        <option value="optionErrado">As "mãos" são usadas para escalar corais.</option>
-        <option value="optionCorreto">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
-    </select>
-    <button onclick="proximaPergunta()">Próxima Pergunta</button>
-    <div class="mensagem"></div>
-</div>
-    </body>`
-        const respostaUsuario = select.value
+        body.innerHTML = `
+            <h2>Quiz</h2>
+            <div class="contender">
+                <h2>Quais são as teorias mais aceitas pela comunidade científica sobre a evolução das características únicas do Peixe Rosa com Mãos?</h2>
+                <h3> Sua pontuação atual: ${pontuacao}</h3>
+                <select id="select_resultado">
+                    <option value="#">Selecione uma alternativa</option>
+                    <option value="optionErrado">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+                    <option value="optionErrado">As "mãos" são usadas para escalar corais.</option>
+                    <option value="optionCorreto">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+                </select>
+                <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                <div id="mensagem"></div>
+            </div>
+        `;
+    }
 
-        if (respostaUsuario == "optionVazio") {
-            mensagem.innerHTML += `Selecione uma opção!`;
-            return;
-        }
-        else {
-            if (respostaUsuario == "optionCorreto") {
-                pontuacao += 1
+    function proximaPergunta() {
+        const respostaUsuario = select_resultado.value;
+
+        if (respostaUsuario === "#") {
+            mensagem.innerHTML = `Selecione uma opção!`;
+        } else {
+            if (respostaUsuario === "optionCorreto") {
+                pontuacao += 1;
+            }
+
+            if (perguntaAtual === 1) {
+                perguntaAtual++;
+                body.innerHTML = `
+                    <h2>Quiz</h2>
+                    <div class="contender">
+                        <h2>Segunda pergunta?</h2>
+                        <h3> Sua pontuação atual: ${pontuacao}</h3>
+                        <select id="select_resultado">
+                            <option value="#">Selecione uma alternativa</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionCorreto">Opção correta.</option>
+                        </select>
+                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                        <div id="mensagem"></div>
+                    </div>
+                `;
+            } else if (perguntaAtual === 2) {
+                perguntaAtual++;
+                body.innerHTML = `
+                    <h2>Quiz</h2>
+                    <div class="contender">
+                        <h2>Terceira pergunta?</h2>
+                        <h3> Sua pontuação atual: ${pontuacao}</h3>
+                        <select id="select_resultado">
+                            <option value="#">Selecione uma alternativa</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionCorreto">Opção correta.</option>
+                        </select>
+                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                        <div id="mensagem"></div>
+                    </div>
+                `;
+            } else if (perguntaAtual === 3) {
+                perguntaAtual++;
+                body.innerHTML = `
+                    <h2>Quiz</h2>
+                    <div class="contender">
+                        <h2>Quarta pergunta?</h2>
+                        <h3> Sua pontuação atual: ${pontuacao}</h3>
+                        <select id="select_resultado">
+                            <option value="#">Selecione uma alternativa</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionCorreto">Opção correta.</option>
+                        </select>
+                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                        <div id="mensagem"></div>
+                    </div>
+                `;
+            } else if (perguntaAtual === 4) {
+                perguntaAtual++;
+                body.innerHTML = `
+                    <h2>Quiz</h2>
+                    <div class="contender">
+                        <h2>Quinta pergunta?</h2>
+                        <h3> Sua pontuação atual: ${pontuacao}</h3>
+                        <select id="select_resultado">
+                            <option value="#">Selecione uma alternativa</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionErrado">Opção errada.</option>
+                            <option value="optionCorreto">Opção correta.</option>
+                        </select>
+                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                        <div id="mensagem"></div>
+                    </div>
+                `;
+            } else {
+                body.innerHTML = `
+                    <h2>Quiz</h2>
+                    <div class="contender">
+                        <h2>Quiz Concluído!</h2>
+                        <h3>Sua pontuação final: ${pontuacao}</h3>
+                    </div>
+                `;
             }
         }
-
-    }
-    function proximaPergunta() {
-            body.innerHTML = `teste`
-    
     }
 </script>
-<!-- linha -->
+
