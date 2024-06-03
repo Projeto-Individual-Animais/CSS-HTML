@@ -102,12 +102,13 @@ function salvarResultado(req, res) {
 
 
 function obterPontuacao(req, res) {
-    var usuarioId = req.body.usuarioId;
+    var idUsuario = req.body.idUsuario;
 
-    if (usuarioId==undefined) {
+    if (!idUsuario) {
+        console.log(idUsuario)
         return res.status(400).send("Usuário está indefinido!");
     }
-    usuarioModel.obterPontuacao(usuarioId)
+    usuarioModel.obterPontuacao(idUsuario)
         .then(resultado => {
             res.json(resultado);
         })

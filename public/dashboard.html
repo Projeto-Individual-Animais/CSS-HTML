@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/dashboard.css">
 </head>
 
-<body>
+<body onload="obterPontuacao()">
   <section class="home">
     <header class="header">
       <div id="navbar">
@@ -37,7 +37,6 @@
 
 </html>
 <script>
-  const pontuacao = Number(sessionStorage.getItem('pontuacao'));
   const labels = ['Ultimas pontuações'];
   const data = {
       labels: labels,
@@ -117,7 +116,7 @@
 
 function obterPontuacao(){
 
-  fetch(`/usuarios/obterPontuacao?usuarioId=${sessionStorage.getItem(`ID_USUARIO`)}`, {
+  fetch(`/usuarios/obterPontuacao?idUsuario=${sessionStorage.getItem('ID_USUARIO')}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -136,10 +135,10 @@ function obterPontuacao(){
       console.log("Três maiores pontuações: ", data);
 
       const nomes = data.map(item => item.nome);
-      const pontuaçoes = data.map(item => parseInt(item.total_pontuacao));
+      const pontuacoes = data.map(item => parseInt(item.total_pontuacao));
 
       myChart.data.labels = nomes;
-      myChart.data.datasets[0].data = item;
+      myChart.data.datasets[0].data = pontuacoes;
 
       myChart.update();
 
