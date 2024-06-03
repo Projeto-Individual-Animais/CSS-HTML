@@ -100,8 +100,27 @@ function salvarResultado(req, res) {
         });
 }
 
+
+function obterPontuacao(req, res) {
+    var usuarioId = req.body.usuarioId;
+
+    if (usuarioId==undefined) {
+        return res.status(400).send("Usuário está indefinido!");
+    }
+    usuarioModel.obterPontuacao(usuarioId)
+        .then(resultado => {
+            res.json(resultado);
+        })
+        .catch(erro => {
+            console.error("Houve um erro ao salvar o resultado:", erro.sqlMessage);
+            res.status(500).json({ error: erro.sqlMessage });
+        });
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
-    salvarResultado
+    salvarResultado,
+    obterPontuacao
 }

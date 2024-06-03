@@ -30,9 +30,18 @@ function salvarResultado(usuario, quiz, pontuacao) {
     return database.executar(instrucaoSql);
 }
 
+function obterPontuacao(usuarioId) {
+    console.log(`${usuarioId}`);
+    var instrucaoSql = `
+    `;
+    console.log("Executando a instrução SQL:", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
     autenticar,
     cadastrar,
-    salvarResultado
+    salvarResultado,
+    obterPontuacao
 };
