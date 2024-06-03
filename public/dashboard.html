@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementando chatJs</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+  <section class="home">
+    <header class="header">
+      <div id="navbar">
+        <ul>
+          <li><a href="./logadoIndex.html#home">Home</a></li>
+          <li><a href="./logadoIndex.html#about">Sobre</a></li>
+          <li><a href="./logadoIndex.html#curiosity">Curiosidades</a></li>
+          <li><a href="./vejaMais.html">Envie sua sugestão</a></li>
+          <li><a href="dashboard.html">Gráfico</a></li>
+          <div class="sair">
+            <li><a href="index.html">Sair</a></li>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <div class="corpoDashboard">
+  
+      <div id="chart-container">
+        <canvas id="myDoughnutChart" style="position: relative; height: 40vh; width: 40vw;"></canvas>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+<script>
+  const ctx = document.getElementById('myDoughnutChart');
+
+  const data = {
+    labels: ['Amei', 'Gostei', 'Não gostei'],
+    datasets: [{
+      label: 'Amei, não conhecia',
+      data: [5, 6, 2],
+      backgroundColor: [
+        '#ffb703',
+        '#219ebc',
+        '#023047'
+      ],
+      borderColor: [
+        '#ffb703',
+        '#219ebc',
+        '#023047'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size: 13,
+              family: 'Arial, sans-serif',
+            },
+            color: 'black'
+          }
+        },
+        title: {
+          display: true,
+          text: 'Veja como a comunidade reagiu Quiz do artigo:',
+          font: {
+            size: 20,
+            family: 'Arial, sans-serif',
+            weight: 'bold',
+          },
+          color: 'black',
+          padding: {
+            top: 50,
+            bottom: 0
+          },
+        },
+        subtitle: { // Adicionei o subtítulo aqui
+          display: true,
+          text: 'Peixe Rosa com Mãos',
+          font: {
+            size: 16,
+            family: 'Arial, sans-serif',
+            weight: 'normal',
+          },
+          color: 'black',
+          padding: {
+            top: 10,
+            bottom: 20
+          },
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          titleFont: {
+            size: 14,
+            family: 'Arial, sans-serif',
+            weight: 'bold'
+          },
+          bodyFont: {
+            size: 12,
+            family: 'Arial, sans-serif',
+            weight: 'normal'
+          },
+          bodyColor: '#fff',
+          borderColor: '#333',
+          borderWidth: 1
+        }
+      },
+      cutout: '50%',
+      backgroundColor: '#fff', // Define o fundo como branco
+
+    }
+  };
+  new Chart(ctx, config);
+</script>

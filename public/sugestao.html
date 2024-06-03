@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/sugestao.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sugestões de Tópicos</h1>
+        <form id="suggestionForm">
+            <label for="titulo">Título do Tópico:</label>
+            <input id="titulo" placeholder="Digite o título aqui" required>
+
+            <label for="conteudo">Descrição (opcional):</label>
+            <textarea id="conteudo" placeholder="Detalhes adicionais sobre o tópico"></textarea>
+
+            <button type="button" onclick="publicar()">Enviar Sugestão</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
+    <script>
+    function publicar() {
+    var idUsuario = sessionStorage.ID_USUARIO;
+    var titulo = document.getElementById("titulo").value;
+    var conteudo = document.getElementById("conteudo").value; // corrigido de descricao para conteudo
+
+    if(titulo == ""){
+            alert("Preencha pelo menos o campo Título!");
+
+        }
+        return;
+
+    var corpo = {
+        titulo: titulo,
+        conteudo: conteudo // corrigido de descricao para conteudo
+    };
+
+    fetch(`/avisos/publicar/${idUsuario}`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(corpo)
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+        if (resposta.ok) {
+            alert("Post realizado com sucesso!");
+        }
+       
+        else if (resposta.status == 404) {
+            window.alert("Deu 404!");
+        } else {
+            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+}
+</script>

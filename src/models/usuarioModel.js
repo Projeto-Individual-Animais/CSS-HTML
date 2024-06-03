@@ -21,8 +21,18 @@ function cadastrar(nome, email, senha) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function salvarResultado(usuario, quiz, pontuacao) {
+    console.log("Salvando resultado para usuário:", usuario, "quiz:", quiz, "pontuação:", pontuacao);
+    var instrucaoSql = `
+        INSERT INTO resultadoQuiz (fkUsuario, fkQuiz, pontuacao) VALUES ('${usuario}', '${quiz}', '${pontuacao}');
+    `;
+    console.log("Executando a instrução SQL:", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    salvarResultado
 };

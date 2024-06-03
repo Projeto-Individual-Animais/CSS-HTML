@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-<link rel="stylesheet" href="./css/cadastro.css">
-<!-- <script src="script_cadastro.js"></script> -->
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <script src="./js/script_cadastro.js"></script>
 </head>
 
 <body>
@@ -14,98 +14,105 @@
         <div class="estilo_nome">
             <h1>Cadastro</h1>
         </div>
-<div class="estilo_inputs">
-        <div class="estilo_nome">
-            <h2>Nome de usuário</h2><br>
-        </div>
-        <div class="input">
-        <input id="input_nome" placeholder="Como você gostaria de ser chamado?"></div>
-        <div class="estilo_nome">
-            <h2>E-mail</h2>
-        </div>
+        <div class="estilo_inputs">
+            <div class="estilo_nome">
+                <h2>Nome de usuário</h2><br>
+            </div>
+            <div class="input">
+                <input id="input_nome" placeholder="Como você gostaria de ser chamado?">
+            </div>
+            <div class="estilo_nome">
+                <h2>E-mail</h2>
+            </div>
 
-        <input id="input_email" placeholder="contato@exemplo.com">
+            <input id="input_email" placeholder="contato@exemplo.com">
 
-        <div class="estilo_nome">
-            <h2>Senha</h2>
-        </div>
+            <div class="estilo_nome">
+                <h2>Senha</h2>
+            </div>
 
-        <input type="password" id="input_senha" placeholder="No minimo 6 caracteres normais e 1 especial">
+            <input type="password" id="input_senha" placeholder="No minimo 6 caracteres normais e 1 especial">
 
-        <div class="estilo_nome">
-            <h2>Confirme sua senha</h2>
-        </div>
+            <div class="estilo_nome">
+                <h2>Confirme sua senha</h2>
+            </div>
 
             <input type="password" id="input_confirme_senha" placeholder="Digite sua senha novamente">
 
-    
+
+        </div>
+        <button onclick="cadastrar()">Cadastrar</button>
     </div>
-    <button onclick="cadastrar()">Cadastrar</button></div>
-<div id="mensagem"></div>
+    <div id="mensagem"></div>
 
     </div>
-
-
 </body>
-
 </html>
 <script>
-  function cadastrar() {
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
+function cadastrar() {
+    // Recupere o valor da nova input pelo nome do id
     var nomeVar = input_nome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
     var confirmacaoSenhaVar = input_confirme_senha.value;
 
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
-        alert(`Mensagem de erro para todos os campos em branco`);
+    // Verifique se todos os campos estão preenchidos
+    if (!nomeVar || !emailVar || !senhaVar || !confirmacaoSenhaVar) {
+        alert('Insira todos os campos!');
+        return false;
+    }
 
-      return false;
-    } else {
+    // Verifique se as senhas coincidem
+    if (senhaVar !== confirmacaoSenhaVar) {
+        alert('As senhas não coincidem!');
+        return false;
+    }
+
+    // Verifique se a senha é válida
+    let senhaValida = senhaVar.length >= 6;
+    let senhaTemNaLista = false;
+    const listaCaracteres = ['!', '@', '$', '%', '&', '*'];
+
+    for (let contador = 0; contador < listaCaracteres.length; contador++) {
+        if (senhaVar.includes(listaCaracteres[contador])) {
+            senhaTemNaLista = true;
+            break;
+        }
+    }
+
+    if (!senhaValida || !senhaTemNaLista) {
+        alert('Insira uma senha válida! A senha deve ter pelo menos 6 caracteres e incluir pelo menos um caractere especial.');
+        return false;
     }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-      }),
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+        }),
     })
-      .then(function (resposta) {
+    .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-
-        alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`)
-        ;
-
-          setTimeout(() => {
-            // window.location = "login.html";
-          }, "2000");
-
+            alert('Cadastro realizado com sucesso! Redirecionando para tela de Login...');
+            setTimeout(() => {
+                 window.location = "login.html";
+            }, 2000);
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+            throw "Houve um erro ao tentar realizar o cadastro!";
         }
-      })
-      .catch(function (resposta) {
+    })
+    .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-      });
+    });
 
     return false;
-  }
-
+}
 </script>

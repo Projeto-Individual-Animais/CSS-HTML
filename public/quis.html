@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="./css/quiz.css">
 </head>
 
 <body id="body">
@@ -15,120 +15,154 @@
         <button onclick="iniciar()">Iniciar!</button>
         <div class="mensagem"></div>
     </div>
-</body>
 
-</html>
+    <script>
+        let pontuacao = 0;
+        let perguntaAtual = 1;
 
-<script>
-    let pontuacao = 0;
-    let perguntaAtual = 1;
+        function iniciar() {
+            body.innerHTML = `
+                <h2>Quiz</h2>
+                <div class="contender">
+                    <h2>Quais são as teorias mais aceitas pela comunidade científica sobre a evolução das características únicas do Peixe Rosa com Mãos?</h2>
+                    <h3>Sua pontuação atual: ${pontuacao}</h3>
+                    <select id="select_resultado">
+                        <option value="#">Selecione uma alternativa</option>
+                        <option value="optionErrado">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+                        <option value="optionErrado">As "mãos" são usadas para escalar corais.</option>
+                        <option value="optionCorreto">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+                    </select>
+                    <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                    <div id="mensagem"></div>
+                </div>
+            `;
+        }
 
-    function iniciar() {
-        body.innerHTML = `
-            <h2>Quiz</h2>
-            <div class="contender">
-                <h2>Quais são as teorias mais aceitas pela comunidade científica sobre a evolução das características únicas do Peixe Rosa com Mãos?</h2>
-                <h3> Sua pontuação atual: ${pontuacao}</h3>
-                <select id="select_resultado">
-                    <option value="#">Selecione uma alternativa</option>
-                    <option value="optionErrado">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
-                    <option value="optionErrado">As "mãos" são usadas para escalar corais.</option>
-                    <option value="optionCorreto">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
-                </select>
-                <button onclick="proximaPergunta()">Próxima Pergunta</button>
-                <div id="mensagem"></div>
-            </div>
-        `;
-    }
+        function proximaPergunta() {
+            const respostaUsuario = select_resultado.value;
 
-    function proximaPergunta() {
-        const respostaUsuario = select_resultado.value;
-
-        if (respostaUsuario === "#") {
-            mensagem.innerHTML = `Selecione uma opção!`;
-        } else {
-            if (respostaUsuario === "optionCorreto") {
-                pontuacao += 1;
-            }
-
-            if (perguntaAtual === 1) {
-                perguntaAtual++;
-                body.innerHTML = `
-                    <h2>Quiz</h2>
-                    <div class="contender">
-                        <h2>Segunda pergunta?</h2>
-                        <h3> Sua pontuação atual: ${pontuacao}</h3>
-                        <select id="select_resultado">
-                            <option value="#">Selecione uma alternativa</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionCorreto">Opção correta.</option>
-                        </select>
-                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
-                        <div id="mensagem"></div>
-                    </div>
-                `;
-            } else if (perguntaAtual === 2) {
-                perguntaAtual++;
-                body.innerHTML = `
-                    <h2>Quiz</h2>
-                    <div class="contender">
-                        <h2>Terceira pergunta?</h2>
-                        <h3> Sua pontuação atual: ${pontuacao}</h3>
-                        <select id="select_resultado">
-                            <option value="#">Selecione uma alternativa</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionCorreto">Opção correta.</option>
-                        </select>
-                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
-                        <div id="mensagem"></div>
-                    </div>
-                `;
-            } else if (perguntaAtual === 3) {
-                perguntaAtual++;
-                body.innerHTML = `
-                    <h2>Quiz</h2>
-                    <div class="contender">
-                        <h2>Quarta pergunta?</h2>
-                        <h3> Sua pontuação atual: ${pontuacao}</h3>
-                        <select id="select_resultado">
-                            <option value="#">Selecione uma alternativa</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionCorreto">Opção correta.</option>
-                        </select>
-                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
-                        <div id="mensagem"></div>
-                    </div>
-                `;
-            } else if (perguntaAtual === 4) {
-                perguntaAtual++;
-                body.innerHTML = `
-                    <h2>Quiz</h2>
-                    <div class="contender">
-                        <h2>Quinta pergunta?</h2>
-                        <h3> Sua pontuação atual: ${pontuacao}</h3>
-                        <select id="select_resultado">
-                            <option value="#">Selecione uma alternativa</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionErrado">Opção errada.</option>
-                            <option value="optionCorreto">Opção correta.</option>
-                        </select>
-                        <button onclick="proximaPergunta()">Próxima Pergunta</button>
-                        <div id="mensagem"></div>
-                    </div>
-                `;
+            if (respostaUsuario === "#") {
+                mensagem.innerHTML = `Selecione uma opção!`;
             } else {
-                body.innerHTML = `
-                    <h2>Quiz</h2>
-                    <div class="contender">
-                        <h2>Quiz Concluído!</h2>
-                        <h3>Sua pontuação final: ${pontuacao}</h3>
-                    </div>
-                `;
+                if (respostaUsuario === "optionCorreto") {
+                    pontuacao += 1;
+                }
+
+                if (perguntaAtual === 1) {
+                    perguntaAtual++;
+                    body.innerHTML = `
+                        <h2>Quiz</h2>
+                        <div class="contender">
+                            <h2>Segunda pergunta?</h2>
+                            <h3>Sua pontuação atual: ${pontuacao}</h3>
+                            <select id="select_resultado">
+                                <option value="#">Selecione uma alternativa</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionCorreto">Opção correta.</option>
+                            </select>
+                            <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                            <div id="mensagem"></div>
+                        </div>
+                    `;
+                } else if (perguntaAtual === 2) {
+                    perguntaAtual++;
+                    body.innerHTML = `
+                        <h2>Quiz</h2>
+                        <div class="contender">
+                            <h2>Terceira pergunta?</h2>
+                            <h3>Sua pontuação atual: ${pontuacao}</h3>
+                            <select id="select_resultado">
+                                <option value="#">Selecione uma alternativa</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionCorreto">Opção correta.</option>
+                            </select>
+                            <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                            <div id="mensagem"></div>
+                        </div>
+                    `;
+                } else if (perguntaAtual === 3) {
+                    perguntaAtual++;
+                    body.innerHTML = `
+                        <h2>Quiz</h2>
+                        <div class="contender">
+                            <h2>Quarta pergunta?</h2>
+                            <h3>Sua pontuação atual: ${pontuacao}</h3>
+                            <select id="select_resultado">
+                                <option value="#">Selecione uma alternativa</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionCorreto">Opção correta.</option>
+                            </select>
+                            <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                            <div id="mensagem"></div>
+                        </div>
+                    `;
+                } else if (perguntaAtual === 4) {
+                    perguntaAtual++;
+                    body.innerHTML = `
+                        <h2>Quiz</h2>
+                        <div class="contender">
+                            <h2>Quinta pergunta?</h2>
+                            <h3>Sua pontuação atual: ${pontuacao}</h3>
+                            <select id="select_resultado">
+                                <option value="#">Selecione uma alternativa</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionErrado">Opção errada.</option>
+                                <option value="optionCorreto">Opção correta.</option>
+                            </select>
+                            <button onclick="proximaPergunta()">Próxima Pergunta</button>
+                            <div id="mensagem"></div>
+                        </div>
+                    `;
+                } else {
+                    body.innerHTML = `
+                        <h2>Quiz</h2>
+                        <div class="contender">
+                            <h2>Quiz Concluído!</h2>
+                            <h3>Sua pontuação final: ${pontuacao}</h3>
+                            <div class="feedback">
+                                <h3>Deixe seu feedback sobre o quiz:</h3>
+                                <select id="feedback_select">
+                                    <option value="Amei">Amei</option>
+                                    <option value="Gostei">Gostei</option>
+                                    <option value="Não gostei">Não gostei</option>
+                                </select>
+                                <button onclick="salvarResultado()">Ir para dashboard</button>
+                            </div>
+                        </div>
+                    `;
+                }
             }
         }
-    }
-</script>
 
+        function salvarResultado() {
+            var UsuarioIdVar = sessionStorage.getItem('ID_USUARIO');
+            fetch(`/usuarios/salvarResultado`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    usuarioIdServer: UsuarioIdVar,
+                    idQuizServer: 1,
+                    pontuacaoServer: pontuacao
+                }),
+            })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    console.log("Resultado salvo com sucesso!");
+                } else {
+                    throw "Houve um erro ao tentar realizar o login!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    </script>
+</body>
+</html>

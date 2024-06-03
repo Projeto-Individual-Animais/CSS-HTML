@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap');
 
+*{
+    font-family: "Secular One", sans-serif;
+
+}
 body {
     margin: 0;
     font-family: "PT Serif", serif;
@@ -7,20 +11,29 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 .header {
     display: flex;
     width: 100%;
-    height: 100%;
     font-family: sans-serif;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    background-color: black;
     align-items: center;
-    margin-top: 3vh;
+    z-index: 1000;
+    /* Define um valor alto de z-index para a barra de navegação */
 }
 
 ul {
     list-style: none;
     display: flex;
-    align-items: end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -30,38 +43,38 @@ li {
 a {
     text-decoration: none;
     font-size: 1.2vw;
-    margin-top: 4.5vh;
     color: white;
+    margin-top: 4.5vh;
+
 }
 
 #navbar {
     display: flex;
-    position: fixed;
     width: 100%;
     height: 10vh;
     flex-direction: row;
-    background-color: black;
+    background-color: #000814; /* Cor amarela */
+    justify-content: flex-end;
+    /* Mover a navbar para o lado direito */
+    padding-right: 20px;
+    /* Adicionar um espaço à direita para separar do lado da tela */
 }
 
-#navbar ul {
-    margin-left: auto;
-}
-
+/* Estilo para o item "Sair" */
 .login {
-    display: flex;
-    border: 2px solid white;
-    border-radius: 90vh;
-    height: 70%;
-    width: 12vh;
-    text-align: center;
+    border: 1px solid white;
+    /* Adicionar uma borda ao redor do item "Sair" */
+    border-radius: 5px;
+    /* Arredondar as bordas da borda */
+    padding: 5px 5px;
+    /* Adicionar um pouco de espaço interno */
+
 }
 
+/* Estilo para o texto do item "Sair" */
 .login a {
-    letter-spacing: 4px;
-    font-weight: 500;
     color: white;
-    height: 50%;
-    text-align: center;
+    /* Definir a cor do texto como branco */
 }
 
 .home {
@@ -75,11 +88,13 @@ a {
     box-sizing: border-box;
     /* border: 0.5vh solid black; */
 }
+
 .home h1 {
     display: flex;
     color: white;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 14vh;
     font-family: "Secular One", sans-serif;
@@ -92,58 +107,61 @@ a {
     align-items: flex-end;
     width: 100%;
     height: 100%;
+    
 }
 
-.conteudo {
+.conteudo  {
     display: flex;
     flex-direction: column;
-    color: white;
-    background-color: #3d3f4291;
+    align-items: center;
+    color: black;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
     width: 50%;
     margin-bottom: 10vh;
-    border-top: -5vh;
-    /* margin-right: 3vh; */
-border-top-left-radius: 10%;
+    border-top: 2vh;
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+
 }
 
-.conteudo h1 {
+.conteudo h2 {
     display: flex;
-    font-size: 6vh;
+    font-size: 5vh;
     font-weight: bold;
     margin-left: 4vh;
     font-family: "Secular One", sans-serif;
 
 }
 
-.conteudo h2 {
+.conteudo h3 {
     display: flex;
-    font-size: 4vh;
-    font-weight: bold;
+    font-size: 3vh;
+font-weight: 100;
+
 }
 
 .sobre {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    /* border: 0.5vh solid black; */
+    background-color: #001d3d;
+    border:  solid black 0.5vh;
 }
 
 .sobre h1 {
     display: flex;
     font-weight: bold;
-    color: black;
+    color: white;
     justify-content: center;
-    font-size: 7vh;
+    font-size: 5vh;
     font-family: "Secular One", sans-serif;
 }
 
 .containerSobre {
     display: flex;
     justify-content: center;
+    align-self: start;
     width: 100%;
     margin-top: 10vh;
     margin-bottom: 20vh;
@@ -152,35 +170,14 @@ border-top-left-radius: 10%;
 .design {
     display: flex;
     width: 100%;
-    border: 0.5vh solid black;
     background-color: rgba(255, 255, 255, 0.5);
+
 }
 
 .conteudoSobre {
     display: flex;
     width: 80%;
-    justify-content: left;
-    align-items: flex-end;
-}
-
-#curiosidades {
-    background-color: transparent;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffc300;
-    border: 0.5vh solid black;
-    
-}
-
-#curiosidades h1 {
-    display: flex;
-    font-weight: bold;
-    color: black;
-    font-size: 5vh;
-    justify-content: center;
-    font-family: "Secular One", sans-serif;
-    margin-top: 10vh;
+  
 }
 
 .conteudoSobre h2 {
@@ -188,105 +185,167 @@ border-top-left-radius: 10%;
     font-size: 4vh;
     color: black;
     font-family: sans-serif;
-    text-align: center;
+    text-align: start;
+    padding: 20px; /* Adicione o espaçamento interno desejado */
+
+}
+.curiosidades {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, #001d3d, #003566, #003566);
+
+}
+
+
+.imagemCuriosidade {
+    display: flex;
+    padding: 5vh;
+    justify-content: center;
+}
+
+.imagemPeixe {
+    max-width: 80%;
+    border: solid 0.5vh white;
+    height: 50vh;
+    border-radius: 5px;
+    /* margin-left: 30vh;height: 50vh; */
+    /* Ajusta a altura para manter a proporção */
+}
+
+.curiosidades h1 {
+    display: flex;
+    /* font-weight: bold; */
+    color: white;
+    font-size: 5vh;
+    justify-content: center;
+    margin-top: 10vh;
 }
 
 .conteudoCuriosidades {
     display: flex;
-    width: 100%;
-    flex-direction: column;
+    width: 80%;
     align-items: start;
-    margin-left: 5vh;
+    background-color: #ffc300;
+    border-radius: 5px;
+    padding: 10px;
+    color: wheat;
+    justify-content: center;
     font-size: 2vh;
-    flex: 1; /* Ocupa metade do espaço disponível */
-    padding: 20px;
-    }
-.imagem{
-    width: 100%;
-    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
+    margin: 0 auto; 
+
 }
 
 
-.conteudoCuriosidadesInicio, .conteudoCuriosidadesMeio, .conteudoCuriosidadesFinal {
+.conteudoCuriosidadesInicio {
     display: flex;
-    width: 50%;
+    width: 80%;
     background-color: transparent;
     flex-direction: column;
 }
 
-
-/* .reactions {
+.tituloQuiz {
+    text-align: center;
+    margin-top: 10vh;
     display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    /* Centralizar horizontalmente */
 }
 
-.reactions h2 {
-    font-size: 2vh;
+.tituloQuiz h1 {
+    font-size: 5vh;
+    margin-bottom: 2vh;
 }
 
-button {
-    font-size: 16px;
-    width: 5vh;
-    height: 5vh;
+.tituloQuiz p {
+    font-size: 3vh;
+    color: wheat;
+}
+
+.quizInicar {
+    text-decoration: none;
+    font-size: 3vh;
+    background-color: #ffc300;
+    color: white;
+    padding: 1.5vh 4vh;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 90%;
+    margin-bottom: 8vh;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #ddd;
+.quizInicar:hover {
+    background-color: #ffd60a;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000814;
+    color: #fff;
+    height: 40vh;
+    flex-direction: column;
+
+    /* box-sizing: border-box; */
 }
 
-#btn_likeNew {
-    background-color: aqua;
-align-items: center;
-justify-content: space-around;
+.footer-content {
+    display: flex;
+    font-size: 3vh;
+ 
+}
+
+.footerEsquerda {
+    margin-right: 120vh;
+}
+.footerDireita{
+    margin-right: 10vh;
+    margin-bottom: 15vh;
+
+}
+.vejaMais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    font-size: 3vh;
+    border: solid #ffc300 0.5vh;
+    color: white;
+    padding: 1.5vh 4vh;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-bottom: 4vh; */
+    transition: background-color 0.3s ease;
+    }
+
+.vejaMais p{
+    margin-bottom: 7vh;
+}
+
+
+.vejaMais:hover {
+background-color: #ffd60a;
+}
+
+.contact-info {
+    list-style-type: none;
+}
+
+.social-links {
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
 
 }
 
-#btn_likeKnown {
-    background-color: aquamarine;
+.social-link:hover {
+    text-decoration: underline;
 }
-
-#btn_dislike {
-    background-color: crimson;
-}
-.reacaoAmei{
-    width: 15vh;
-    height: 15vh;
-     border-radius: 2vh;
-     text-align: center;
-    background-color: white;
-}
-.reacaoAmei{
-    width: 15vh;
-    height: 15vh;
-     border-radius: 2vh;
-     text-align: center;
-    background-color: white;
-}
-.reacaoAmei{
-    width: 15vh;
-    height: 15vh;
-     border-radius: 2vh;
-     text-align: center;
-    background-color: white;
-}
-.reacaoLike{
-    width: 15vh;
-    height: 15vh;
-     border-radius: 2vh;
-     text-align: center;
-    background-color: white;
-}
-.reacaoDislike{
-    width: 15vh;
-    height: 15vh;
-     border-radius: 2vh;
-     text-align: center;
-    background-color: white;
-} */

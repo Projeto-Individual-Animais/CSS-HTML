@@ -1,0 +1,58 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #001d3d; /* Cor de fundo */
+    color: black; /* Cor do texto */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centralizar conteúdo na página */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff; /* Cor do título */
+    background: linear-gradient(to bottom, #003566, #003566 );
+    /* Gradiente de fundo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.sessao {
+    margin-top: 30px;
+}
+
+.titulo {
+    color: #777; /* Cor do título da sessão */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.conteudo {
+    background-color: #ffc300; /* Cor de fundo */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-bottom: 20px;
+}
+
+.conteudo img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o rodapé */
+.rodape {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #777; /* Cor do texto */
+}

@@ -19,12 +19,11 @@ function autenticar(req, res) {
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
-                            res.status(200).json(resultadoAutenticar);
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
+                        res.status(200).json({
+                            idUsuario: resultadoAutenticar[0].idUsuario,
+                            email: resultadoAutenticar[0].email,
+                            nome: resultadoAutenticar[0].nome,
+                            senha: resultadoAutenticar[0].senha,
                                     });
                                 
                             
@@ -64,6 +63,7 @@ function cadastrar(req, res) {
             .then(
                 function (resultado) {
                     res.json(resultado);
+                    
                 }
             ).catch(
                 function (erro) {
@@ -78,7 +78,30 @@ function cadastrar(req, res) {
     }
 }
 
+function salvarResultado(req, res) {
+    var usuario = req.body.usuarioIdServer;
+    var quiz = req.body.idQuizServer;
+    var pontuacao = req.body.pontuacaoServer;
+
+    if (!usuario) {
+        return res.status(400).send("Usuário está indefinido!");
+    }
+    if (!quiz) {
+        return res.status(400).send("Quiz está indefinido!");
+    }
+
+    usuarioModel.salvarResultado(usuario, quiz, pontuacao)
+        .then(resultado => {
+            res.json(resultado);
+        })
+        .catch(erro => {
+            console.error("Houve um erro ao salvar o resultado:", erro.sqlMessage);
+            res.status(500).json({ error: erro.sqlMessage });
+        });
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    salvarResultado
 }

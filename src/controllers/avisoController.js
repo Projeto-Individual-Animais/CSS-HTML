@@ -1,5 +1,17 @@
 var avisoModel = require("../models/avisoModel");
 
+function cadastrarSugestao(titulo, descricao, fkUsuario) {
+    console.log("ACESSEI O SUGESTAO MODEL \n\n function cadastrarSugestao()");
+
+    var instrucaoSql = `
+        INSERT INTO sugestao (titulo, conteudo, fkUsuario)
+        VALUES (?, ?, ?);
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql, [titulo, descricao, fkUsuario]);
+}
+
 function listar(req, res) {
     avisoModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
@@ -62,17 +74,17 @@ function pesquisarDescricao(req, res) {
 
 function publicar(req, res) {
     var titulo = req.body.titulo;
-    var descricao = req.body.descricao;
+    var conteudo = req.body.conteudo;
     var idUsuario = req.params.idUsuario;
 
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
-    } else if (descricao == undefined) {
+    } else if (conteudo == undefined) {
         res.status(400).send("A descrição está indefinido!");
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        avisoModel.publicar(titulo, conteudo, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -132,5 +144,6 @@ module.exports = {
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    cadastrarSugestao
 }
