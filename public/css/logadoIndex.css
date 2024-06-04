@@ -26,7 +26,6 @@ html {
     background-color: black;
     align-items: center;
     z-index: 1000;
-    /* Define um valor alto de z-index para a barra de navegação */
 }
 
 ul {
@@ -55,23 +54,17 @@ a {
     flex-direction: row;
     background-color: black;
     justify-content: flex-end;
-    /* Mover a navbar para o lado direito */
     padding-right: 20px;
-    /* Adicionar um espaço à direita para separar do lado da tela */
 }
 
-/* Estilo para o item "Sair" */
 .sair {
     border: 1px solid white;
-    /* Adicionar uma borda ao redor do item "Sair" */
     border-radius: 5px;
-    /* Arredondar as bordas da borda */
     padding: 5px 5px;
     justify-content: center;
 
 }
 
-/* Estilo para o texto do item "Sair" */
 .sair a {
     color: white;
     margin-right: -100px;
@@ -108,10 +101,10 @@ a {
     align-items: flex-end;
     width: 100%;
     height: 100%;
-    
+
 }
 
-.conteudo  {
+.conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +131,7 @@ a {
 .conteudo h3 {
     display: flex;
     font-size: 3vh;
-font-weight: 100;
+    font-weight: 100;
 
 }
 
@@ -147,7 +140,7 @@ font-weight: 100;
     flex-direction: column;
     width: 100%;
     background-color: #001d3d;
-    border:  solid black 0.5vh;
+    border: solid black 0.5vh;
 }
 
 .sobre h1 {
@@ -178,7 +171,7 @@ font-weight: 100;
 .conteudoSobre {
     display: flex;
     width: 80%;
-  
+
 }
 
 .conteudoSobre h2 {
@@ -187,9 +180,10 @@ font-weight: 100;
     color: black;
     font-family: sans-serif;
     text-align: start;
-    padding: 20px; /* Adicione o espaçamento interno desejado */
+    padding: 20px;
 
 }
+
 .curiosidades {
     background-color: transparent;
     width: 100%;
@@ -213,7 +207,6 @@ font-weight: 100;
     height: 50vh;
     border-radius: 5px;
     /* margin-left: 30vh;height: 50vh; */
-    /* Ajusta a altura para manter a proporção */
 }
 
 .curiosidades h1 {
@@ -232,10 +225,10 @@ font-weight: 100;
     background-color: #ffc300;
     border-radius: 5px;
     padding: 10px;
-    color: wheat;
+    color: white;
     justify-content: center;
     font-size: 2vh;
-    margin: 0 auto; 
+    margin: 0 auto;
 
 }
 
@@ -253,7 +246,6 @@ font-weight: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centralizar horizontalmente */
 }
 
 .tituloQuiz h1 {
@@ -281,6 +273,7 @@ font-weight: 100;
 .quizInicar:hover {
     background-color: #ffd60a;
 }
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -288,24 +281,25 @@ font-weight: 100;
     color: #fff;
     height: 40vh;
     flex-direction: column;
-
     /* box-sizing: border-box; */
 }
 
 .footer-content {
     display: flex;
     font-size: 3vh;
- 
+
 }
 
 .footerEsquerda {
     margin-right: 120vh;
 }
-.footerDireita{
+
+.footerDireita {
     margin-right: 10vh;
     margin-bottom: 15vh;
 
 }
+
 .vejaMais {
     display: flex;
     justify-content: center;
@@ -319,15 +313,15 @@ font-weight: 100;
     cursor: pointer;
     /* margin-bottom: 4vh; */
     transition: background-color 0.3s ease;
-    }
+}
 
-.vejaMais p{
+.vejaMais p {
     margin-bottom: 7vh;
 }
 
 
 .vejaMais:hover {
-background-color: #ffd60a;
+    background-color: #ffd60a;
 }
 
 .contact-info {

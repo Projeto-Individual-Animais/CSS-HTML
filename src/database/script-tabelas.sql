@@ -20,10 +20,6 @@ constraint fkUsuarioQuiz foreign key (fkUsuario) references usuario(idUsuario),
 constraint fkQuizResultado foreign key (fkQuiz) references quiz(idQuiz),
 primary key (idResultado, fkUsuario, fkQuiz),
 pontuacao int);
-select * from resultadoQuiz;
-
-
-    select sum(pontuacao) as total_pontuacao from resultadoQuiz where fkUsuario = 1;
 
 create table sugestao(
 idSugestao int primary key auto_increment,
@@ -45,10 +41,7 @@ fkArtigo int,
 constraint fkConteudoArtigo foreign key (fkArtigo) references artigo(idArtigo)
 );
 
-SELECT * FROM usuario;
-SELECT * FROM resultadoQuiz;
 
-insert into quiz values(1, 'O peixe com mãos')
 
 -- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
 -- Você precisa executar os comandos no banco de dados para criar as tabelas,

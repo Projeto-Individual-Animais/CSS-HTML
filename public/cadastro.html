@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="./css/cadastro.css">
-    <script src="./js/script_cadastro.js"></script>
 </head>
 
 <body>
@@ -50,25 +49,21 @@
 </html>
 <script>
 function cadastrar() {
-    // Recupere o valor da nova input pelo nome do id
     var nomeVar = input_nome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
     var confirmacaoSenhaVar = input_confirme_senha.value;
 
-    // Verifique se todos os campos estão preenchidos
     if (!nomeVar || !emailVar || !senhaVar || !confirmacaoSenhaVar) {
         alert('Insira todos os campos!');
         return false;
     }
 
-    // Verifique se as senhas coincidem
     if (senhaVar !== confirmacaoSenhaVar) {
         alert('As senhas não coincidem!');
         return false;
     }
 
-    // Verifique se a senha é válida
     let senhaValida = senhaVar.length >= 6;
     let senhaTemNaLista = false;
     const listaCaracteres = ['!', '@', '$', '%', '&', '*'];
@@ -85,7 +80,6 @@ function cadastrar() {
         return false;
     }
 
-    // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
         method: "POST",
         headers: {

@@ -1,91 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Secular+One&display=swap');
 
- 
 
- 
 
-body { 
 
-    display: flex; 
 
-    margin: 0; 
+body {
 
-    font-family: "PT Serif", serif; 
+    display: flex;
 
-    width: 100vw; 
+    margin: 0;
 
-    height: 100vh; 
+    font-family: "PT Serif", serif;
 
-    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif"); 
+    width: 100vw;
 
-    background-size: cover; 
+    height: 100vh;
 
-    background-repeat: no-repeat; 
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVkZjd4djRyZzZhNTc1cnlveWFpN3RuOHFvZnM1aHo3c3UyMTRjNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3q3SUqPnxZGQpMNcjc/giphy.gif");
 
-    box-sizing: border-box; 
+    background-size: cover;
 
-    justify-content: center; 
+    background-repeat: no-repeat;
 
-    align-items: center; 
+    box-sizing: border-box;
+
+    justify-content: center;
+
+    align-items: center;
 
 }
-* a{
+
+* a {
     text-decoration: none;
 }
 
-.bloco{ 
+.bloco {
 
-    display: flex; 
+    display: flex;
 
-    width: 40vw; 
+    width: 40vw;
 
-    height: 60vh; 
+    height: 60vh;
 
-    background-color: aliceblue; 
+    background-color: aliceblue;
 
     /* border-radius: 10%;  */
 
-    border: 0.5vh solid #023047; 
+    border: 0.5vh solid #023047;
 
-    flex-direction: column; 
+    flex-direction: column;
 
-    justify-content: center; 
+    justify-content: center;
 
-    align-items: center; 
+    align-items: center;
 
 
-} 
+}
 
-.bloco h1{ 
-    display: flex; 
-    font-size: 6vh; 
+.bloco h1 {
+    display: flex;
+    font-size: 6vh;
     text-align: center;
     /* margin-top: -5vh; */
     border-bottom: 0.5vh solid #023047;
     justify-content: start;
 
 }
-.estilo{
+
+.estilo {
     height: 25%;
     width: 50%;
     margin-top: -5vh;
     margin-right: 15vh;
 }
 
-.bloco h2{ 
+.bloco h2 {
 
-    display: flex; 
-    text-align: start; 
+    display: flex;
+    text-align: start;
     font-size: 2vh;
-    /* margin-left: 37vh; */ 
+    /* margin-left: 37vh; */
 
 }
-.estilo_email_senha{
+
+.estilo_email_senha {
     height: 25%;
     width: 50%;
     margin-right: 15vh;
 }
-button{
+
+button {
     display: block;
     font-size: 3vh;
     /* border-radius: 3vh; */
@@ -93,25 +97,27 @@ button{
     color: azure;
     /* margin-right: 47vh; */
     margin-top: 5vh;
-    width:58vh
-
+    width: 58vh
 }
-.estilo_cadastro h3{
+
+.estilo_cadastro h3 {
     height: 100%;
     width: 100%;
     /* margin-top: -5vh; */
     /* margin-left: 15vh; */
     font-size: 2vh;
-text-align: center;
+    text-align: center;
 }
-.cadastrar{
+
+.cadastrar {
     width: 100%;
     font-size: 2vh;
     /* margin-top: vh; */
 
 }
-.estilo_cadastro a{
-    display:flex;
+
+.estilo_cadastro a {
+    display: flex;
     margin-top: -4vh;
     justify-content: center;
 }

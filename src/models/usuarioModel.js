@@ -29,14 +29,26 @@ function salvarResultado(usuario, quiz, pontuacao) {
     console.log("Executando a instrução SQL:", instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
 function obterPontuacao(idUsuario) {
-
-    console.log(`${idUsuario}`);
-    var instrucaoSql = `select sum(pontuacao) as total_pontuacao from resultadoQuiz where fkUsuario = ${idUsuario}
+    var instrucaoSql = `
+        SELECT usuario.nome, resultadoQuiz.pontuacao AS total_pontuacao
+        FROM usuario
+        LEFT JOIN resultadoQuiz ON usuario.idUsuario = resultadoQuiz.fkUsuario
+        WHERE resultadoQuiz.idResultado IN (
+            SELECT MIN(idResultado)
+            FROM resultadoQuiz
+            WHERE fkUsuario = usuario.idUsuario
+            GROUP BY fkUsuario
+        );
     `;
     console.log("Executando a instrução SQL:", instrucaoSql);
-    return database.executar(instrucaoSql);
+    return database.executar(instrucaoSql)
+        .then(resultado => {
+            if (resultado.length === 0) {
+                return Promise.reject({ message: "Nenhum resultado encontrado." });
+            }
+            return resultado;
+        });
 }
 
 

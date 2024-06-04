@@ -12,8 +12,6 @@
 
     <link rel="stylesheet" href="./css/login.css">
 
-    <script src="script_login.js"></script>
-
 </head>
 
 <body>
@@ -44,17 +42,14 @@
 </html>
 <script>
     function entrar() {
-    // Recupere o valor da nova input pelo nome do id
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
 
-    // Verifique se todos os campos estão preenchidos
     if (!emailVar || !senhaVar) {
         alert('Insira todos os campos!');
         return false;
     }
 
-    // Enviando o valor da nova input
     fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {

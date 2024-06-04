@@ -77,7 +77,6 @@ function cadastrar(req, res) {
             );
     }
 }
-
 function salvarResultado(req, res) {
     var usuario = req.body.usuarioIdServer;
     var quiz = req.body.idQuizServer;
@@ -100,24 +99,22 @@ function salvarResultado(req, res) {
         });
 }
 
-
 function obterPontuacao(req, res) {
-    var idUsuario = req.body.idUsuario;
+    var idUsuario = req.query.idUsuario;
 
     if (!idUsuario) {
         console.log(idUsuario)
-        return res.status(400).send("Usuário está indefinido!");
+        return res.status(400).send("ID do usuário está indefinido!");
     }
     usuarioModel.obterPontuacao(idUsuario)
         .then(resultado => {
             res.json(resultado);
         })
         .catch(erro => {
-            console.error("Houve um erro ao salvar o resultado:", erro.sqlMessage);
+            console.error("Houve um erro ao obter a pontuação:", erro.sqlMessage);
             res.status(500).json({ error: erro.sqlMessage });
         });
 }
-
 
 module.exports = {
     autenticar,

@@ -16,7 +16,7 @@ router.post("/salvarResultado", function (req, res) {
     usuarioController.salvarResultado(req, res);
 });
 router.get("/obterPontuacao", function (req, res) {
-    usuarioController.Pontuacao(req, res);
+    usuarioController.obterPontuacao(req, res);
 });
 
 module.exports = router;

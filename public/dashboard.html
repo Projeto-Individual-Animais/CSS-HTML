@@ -17,7 +17,7 @@
           <li><a href="./logadoIndex.html#home">Home</a></li>
           <li><a href="./logadoIndex.html#about">Sobre</a></li>
           <li><a href="./logadoIndex.html#curiosity">Curiosidades</a></li>
-          <li><a href="./vejaMais.html">Envie sua sugestão</a></li>
+          <li><a href="./sugestao.html">Envie sua sugestão</a></li>
           <li><a href="dashboard.html">Gráfico</a></li>
           <div class="sair">
             <li><a href="index.html">Sair</a></li>
@@ -114,14 +114,13 @@
       }
   });
 
-function obterPontuacao(){
-
+  function obterPontuacao(){
   fetch(`/usuarios/obterPontuacao?idUsuario=${sessionStorage.getItem('ID_USUARIO')}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        }
-    })
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+    }
+})
     .then(function (resposta) {
         console.log("resposta: ", resposta);
 
@@ -150,5 +149,3 @@ function obterPontuacao(){
 }
 
 </script>
-
-

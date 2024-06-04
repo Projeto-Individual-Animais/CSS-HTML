@@ -29,21 +29,20 @@
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
         var titulo = document.getElementById("titulo").value;
-        var conteudo = document.getElementById("conteudo").value; // corrigido de descricao para conteudo
+        var conteudo = document.getElementById("conteudo").value; 
 
         if (titulo == "") {
             alert("Preencha pelo menos o campo Título!");
             return;
-
         }
 
         var corpo = {
             titulo: titulo,
-            conteudo: conteudo // corrigido de descricao para conteudo
+            conteudo: conteudo 
         };
 
         fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "GET",
+            method: "post",
             headers: {
                 "Content-Type": "application/json"
             },

@@ -25,7 +25,7 @@ h2 {
     width: 80%;
     max-width: 600px;
     text-align: center;
-    animation: fadeOut  0.5s ease-in-out;
+    animation: fadeOut 0.5s ease-in-out;
 }
 
 .contender h2 {
@@ -40,7 +40,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-button{
+button {
     background-color: #4CAF50;
     border: none;
     border-radius: 5px;
@@ -95,7 +95,12 @@ select {
     margin-top: 20px;
 }
 
-@keyframes fadeOut  {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

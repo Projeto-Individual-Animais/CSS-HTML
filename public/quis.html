@@ -11,7 +11,9 @@
 <body id="body">
     <h2>Quiz</h2>
     <div class="contender">
-        <h2>Teste o seu conhecimento!</h2>
+        <h2 style="color: navy;">O que você entendeu sobre:</h2>
+        <h2>O peixe rosa com Mãos</h2>
+
         <button onclick="iniciar()">Iniciar!</button>
         <div class="mensagem"></div>
     </div>
@@ -24,13 +26,13 @@
             body.innerHTML = `
                 <h2>Quiz</h2>
                 <div class="contender">
-                    <h2>Quais são as teorias mais aceitas pela comunidade científica sobre a evolução das características únicas do Peixe Rosa com Mãos?</h2>
+                    <h2>Quantas espécies de peixes-de-mão existem?</h2>
                     <h3>Sua pontuação atual: ${pontuacao}</h3>
                     <select id="select_resultado">
                         <option value="#">Selecione uma alternativa</option>
-                        <option value="optionErrado">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
-                        <option value="optionErrado">As "mãos" são usadas para escalar corais.</option>
-                        <option value="optionCorreto">As "mãos" ajudam o peixe a manipular objetos subaquáticos.</option>
+                        <option value="optionErrado">Cinco espécies de peixes-de-mão são mencionadas no texto.</option>
+                        <option value="optionErrado">Dezesseis espécies de peixes-de-mão são mencionadas no texto.</option>
+                        <option value="optionCorreto">Quatorze espécies de peixes-de-mão são mencionadas no texto.</option>
                     </select>
                     <button onclick="proximaPergunta()">Próxima Pergunta</button>
                     <div id="mensagem"></div>
@@ -53,13 +55,13 @@
                     body.innerHTML = `
                         <h2>Quiz</h2>
                         <div class="contender">
-                            <h2>Segunda pergunta?</h2>
+                            <h2>Onde foram encontrados os espécimes do peixe-mão-rosa?</h2>
                             <h3>Sua pontuação atual: ${pontuacao}</h3>
                             <select id="select_resultado">
                                 <option value="#">Selecione uma alternativa</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionCorreto">Opção correta.</option>
+                                <option value="optionErrado">Em uma área perto da ilha de Auckland, na Nova Zelândia.</option>
+                                <option value="optionCorreto">Em uma área perto da ilha de Hobart, na Tasmânia.</option>
+                                <option value="optionErrado"> Em uma área perto da ilha de Sydney, na Austrália.</option>
                             </select>
                             <button onclick="proximaPergunta()">Próxima Pergunta</button>
                             <div id="mensagem"></div>
@@ -70,13 +72,12 @@
                     body.innerHTML = `
                         <h2>Quiz</h2>
                         <div class="contender">
-                            <h2>Terceira pergunta?</h2>
+                            <h2>Por que os cientistas debatem a função das "mãos" do peixe-mão-rosa?</h2>
                             <h3>Sua pontuação atual: ${pontuacao}</h3>
                             <select id="select_resultado">
-                                <option value="#">Selecione uma alternativa</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionCorreto">Opção correta.</option>
+                                <option value="optionCorreto">Os cientistas acreditam que podem ter evoluído para manipular objetos subaquáticos ou ser uma forma de camuflagem.</option>
+                            <option value="optionErrado">Os cientistas acreditam que as mãos do peixe-mão-rosa são usadas para voar acima da água.</option>
+                            <option value="optionErrado">Os cientistas acreditam que as mãos do peixe-mão-rosa são usadas para cantar canções subaquáticas.</option>
                             </select>
                             <button onclick="proximaPergunta()">Próxima Pergunta</button>
                             <div id="mensagem"></div>
@@ -87,13 +88,13 @@
                     body.innerHTML = `
                         <h2>Quiz</h2>
                         <div class="contender">
-                            <h2>Quarta pergunta?</h2>
+                            <h2>Qual é a característica mais distintiva do peixe-mão-rosa?</h2>
                             <h3>Sua pontuação atual: ${pontuacao}</h3>
                             <select id="select_resultado">
                                 <option value="#">Selecione uma alternativa</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionCorreto">Opção correta.</option>
+                                <option value="optionCorreto">Suas nadadeiras que parecem com mãos humanas.</option>
+                                <option value="optionErrado">Suas listras cor de rosa.</option>
+                                <option value="optionErrado">Seu tamanho.</option>
                             </select>
                             <button onclick="proximaPergunta()">Próxima Pergunta</button>
                             <div id="mensagem"></div>
@@ -104,13 +105,13 @@
                     body.innerHTML = `
                         <h2>Quiz</h2>
                         <div class="contender">
-                            <h2>Quinta pergunta?</h2>
+                            <h2>Qual é o nome científico do peixe-mão-rosa?</h2>
                             <h3>Sua pontuação atual: ${pontuacao}</h3>
                             <select id="select_resultado">
                                 <option value="#">Selecione uma alternativa</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionErrado">Opção errada.</option>
-                                <option value="optionCorreto">Opção correta.</option>
+                                <option value="optionErrado">O nome científico do peixe-mão-rosa é Brachiopsilus rosaceus.</option>
+                                <option value="optionCorreto">O nome científico do peixe-mão-rosa é Brachiopsilus dianthus.</option>
+                                <option value="optionErrado">O nome científico do peixe-mão-rosa é Brachyosmilus dianthos.</option>
                             </select>
                             <button onclick="proximaPergunta()">Próxima Pergunta</button>
                             <div id="mensagem"></div>
@@ -121,7 +122,8 @@
                         <h2>Quiz</h2>
                         <div class="contender">
                             <h2>Quiz Concluído!</h2>
-                            <h3>Sua pontuação final: ${pontuacao}</h3>
+                            <h3 style="color: navy;">Sua pontuação final: ${pontuacao}</h3>
+
                             <div class="feedback">
                                 <h3>Veja como a comunidade se saiu no Quiz:</h3>
                                 <button onclick="salvarResultado()">Ver resultado</button>
@@ -150,6 +152,8 @@
 
                 if (resposta.ok) {
                     console.log("Resultado salvo com sucesso!");
+                    window.location = "dashboard.html";
+
                 } else {
                     throw "Houve um erro ao tentar realizar o login!";
                 }
